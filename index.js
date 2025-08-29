@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-
 const FULL_NAME = process.env.FULL_NAME || "john_doe";
 const DOB_DDMMYYYY = process.env.DOB_DDMMYYYY || "17091999";
 const EMAIL = process.env.EMAIL || "john@xyz.com";
@@ -51,8 +50,8 @@ app.post("/bfhl", (req, res) => {
     res.status(200).json({
       is_success: true,
       user_id: `${FULL_NAME.toLowerCase()}_${DOB_DDMMYYYY}`,
-      EMAIL: EMAIL,
-      ROLL_NUMBER: ROLL_NUMBER,
+      email: EMAIL,
+      roll_number: ROLL_NUMBER,
       odd_numbers,
       even_numbers,
       alphabets,
